@@ -67,6 +67,7 @@ class LegrandBiticinoAPI:
     access_token_expires_on = json.loads(response.text)['expires_on']
     self.save_to_yaml({'access_token' : access_token, 'refresh_token' : refresh_token, 'access_token_expires_on' : access_token_expires_on })
     #print('Access_token = ' + access_token + "\nRefresh_token = " + refresh_token + "\n")
+    self.__init__()
     return {'status_code' : response.status_code, 'text' : json.loads(response.text)}
 
   def refresh_token_if_needed(self):
