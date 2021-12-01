@@ -1,5 +1,6 @@
 # Legrand Bticino Smarther API - An easy Python interface
 Nowadays (2021) we see on the market a variety of Wi-Fi Chronothermostat equipped with an API suitable for domotic integration. When comparing functionalities and price, BTicino X8000 emerges as a competitive solution since it is easy to install and use, offers a stable and fully functioning smartphone app, and indeed presents a well documented and performing API. Further info on this API is available here: https://developer.legrand.com
+
 ![Alt text](img/BTicino_X8000.png?raw=true "BTicino_X8000" )
 
 ## Account setup
