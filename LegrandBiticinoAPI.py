@@ -1,4 +1,4 @@
-import time, json, yaml, requests
+import time, json, yaml, requests,os
 
 class LegrandBiticinoAPI:
   def __init__(self):
@@ -28,7 +28,8 @@ class LegrandBiticinoAPI:
                     'Content-Type': 'application/json'}
   
   def load_yaml(self):
-    with open(self.configFile, "r") as f:
+    local_path = os.path.dirname(__file__)
+    with open(local_path + "/" + self.configFile, "r") as f:
       return yaml.safe_load(f)
   
   def save_to_yaml(self,data):
