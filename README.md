@@ -33,3 +33,12 @@ cd Legrand-Bticino-Python-API
 python -m pip install pprintpp pyyaml
 python example.py
 ```
+
+## Unexpected authentication error
+Remember that the client_secret lasts 1 year, hence once expired you need to manually generate a new one. This can be done from https://mysettings.developer.legrand.com/Applications/Owned where you can select your app and under the Secrets section generate a new one. For reference, this is the type of error you receive when client_secret expired.
+```
+"error":"invalid_grant","error_description":"AADB2C90085: The service has encountered an internal error. 
+Please reauthenticate and try again.
+
+access_token = 'Bearer ' + str(json.loads(response.text)['access_token'])
+```
