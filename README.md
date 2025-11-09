@@ -4,7 +4,7 @@ Nowadays (2021) we see on the market a variety of Wi-Fi Chronothermostat equippe
 ![Alt text](img/BTicino_X8000.png?raw=true "BTicino_X8000" )
 
 ## Account setup
-Before starting using this API tool, you need to create an account from https://developer.legrand.com/login/ and subscribe to "Starter Kit" in order to receive both Primary and Secondary keys. Importantly, the Primary Key represents the **Ocp-Apim-Subscription-Key** parameter used in the header of the HTML requests.
+Before starting using this API tool, you need to create an account from https://developer.legrand.com/login/ and subscribe to "Starter Kit" in order to receive both Primary and Secondary keys. Importantly, from https://portal.developer.legrand.com/my-subscriptions you will find the Primary Key represents the **Ocp-Apim-Subscription-Key** parameter used in the header of the HTML requests.
 
 After subscribing to "Starter Kit", you then need to register a web application from https://mysettings.developer.legrand.com/Application/Index and define the application scope as **comfort.read** and **comfort.write**. Once you are done, within 24 hours you will receive an email containing the **client_id** and **client_secret** needed for API authentication.
 
@@ -39,6 +39,5 @@ Remember that the client_secret lasts 1 year, hence once expired you need to man
 ```
 "error":"invalid_grant","error_description":"AADB2C90085: The service has encountered an internal error. 
 Please reauthenticate and try again.
-
 access_token = 'Bearer ' + str(json.loads(response.text)['access_token'])
 ```
