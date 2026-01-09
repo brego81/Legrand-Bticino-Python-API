@@ -9,6 +9,7 @@ class LegrandBiticinoAPI:
     for parameter in ['client_id', 'client_secret', 'redirect_uri', 'Ocp-Apim-Subscription-Key']:
       if parameter not in self.CONFIG.keys():
         in_value =  input("          >> Paste here your " + parameter + ": ")
+        in_value = in_value.replace("\t","").strip()
         self.save_to_yaml({parameter:in_value})
 
     # If not availbe, generate the Authorize Code
@@ -89,14 +90,15 @@ class LegrandBiticinoAPI:
           you should use the get_access_token() and refresh_token_if_needed().
           *********************************************************************
           Follow those steps to obtain you authentication code:
-          1\ Open this URL in your browser : """ + url_auth + """
-          2\ Complete the username & password Sign-in
-          3\ Accept the permissions to access your data
-          4\ Finally, after the redirection copy and paste here following the browser URL containing the code
+          1\\ Open this URL in your browser : """ + url_auth + """
+          2\\ Complete the username & password Sign-in
+          3\\ Accept the permissions to access your data
+          4\\ Finally, after the redirection copy and paste here following the browser URL containing the code
           """)
     redirect_url =  input("          >> Paste here the browser URL:")
     if redirect_url.find(state) != -1 and redirect_url.find('code=') != -1:
-      code = redirect_url[redirect_url.find('code=')+5 : redirect_url.find('&state')]
+      code = redirect_url[redirect_url.find('code=')+5 :]
+      code = code[ : code.find('&')]
       #print("\nAuthorize Code = " + str(code))
       self.save_to_yaml({'authorize_code' : code})
       return code

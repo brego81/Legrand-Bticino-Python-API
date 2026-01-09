@@ -53,7 +53,7 @@ else:
 
 # As example, we want to set to AUTOMATIC if a temeprature is manually defined 
 if status['text']['chronothermostats'][0]['mode'] != 'AUTOMATIC':
-  print("setPoint = " + status['chronothermostats'][0]['setPoint']['value'] + "\n")
+  print("setPoint = " + status['text']['chronothermostats'][0]['setPoint']['value'] + "\n")
   data = {
           "function": "heating", "mode": "AUTOMATIC",
           "setPoint": { "value": "18.20000", "unit": "C" },
